@@ -13,24 +13,51 @@
     <title>Quize App</title>
   </head>
 <body>
-	<div class="h-screen flex items-center justify-center bg-gradient-to-tr from-green-700 to-teal-600 text-white">
-      <div class="">
+	<div class="h-screen flex items-center justify-center bg-gradient-to-b from-sky-800 to-teal-800 text-white">
+      <div class="md:bg-white/10 backdrop-blur-[5px] p-16">
+        <h3 class="flex items-center justify-center border p-2 mb-7">
+          <span class="fa fa-xl fa-stopwatch"></span> 5 min
+        </h3>
         <div class="flex text-teal-600">
           <div class="h-[80px] w-[80px] flex items-center justify-center text-4xl bg-white shadow shadow-black/80 rounded-full mx-5">
             <span class="fab fa-html5"></span>
           </div>
           <div class="h-[80px] w-[80px] flex items-center justify-center text-4xl bg-white shadow shadow-black/80 rounded-full mx-5">
-            <span class="fab fa-css3"></span>
+          	<span class="fab fa-css3"></span>
           </div>
         </div>
-        <div class="">
-          <div class="bg-white px-2 mt-6">
-            <select class="text-gray-700 text-center p-4">
-              <option value="5 to 10">Select No of Questions</option>
-              <option value="5 to 10">5 to 10</option>
+        <div class="my-6">
+          <h3 class="font-thin mb-3">Select No of Questions</h3>
+          <div class="bg-white text-center px-2 py-2">
+            <select class="text-gray-700 text-center border-none focus:border-none outline-none">
+              <class value="5 to 10 text-center">5 to 10</option>
+              <option value="5 to 10 text-center">20 to 30</option>
+              <option value="5 to 10 text-center">30 to 40</option>
+              <option value="5 to 10 text-center">50 to 60</option>
             </select>
           </div>
         </div>
+        <!-- Select solo -->
+        <div class="">
+          <h3 class="font-thin mb-3">Choose No of Players</h3>
+          <div class="flex">
+            <div class="text-center">
+              <input type="radio" name="players" class="h-6 w-full" />
+              Two
+            </div>
+            <div class="text-center">
+              <input type="radio" name="players" class="h-6 w-full" />
+              Three
+            </div>
+            <div class="text-center">
+              <input type="radio" name="players" class="h-6 w-full" />
+              Four
+            </div>
+          </div>
+        </div>
+        <button class="w-full rounded bg-teal-500 py-2 mt-4">
+          Start Quiz
+        </button>
       </div>
     </div>
     <script src="https://cdn.tailwindcss.com"></script>
