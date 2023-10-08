@@ -2,64 +2,91 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
       content="Quize App"
     />
+    <link rel="stylesheet" href="./style/main.css" />
+    <link rel="stylesheet" href="./assets/fontawesome-free-6.4.0-web/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Quize App</title>
   </head>
 <body>
 	<div class="h-screen flex items-center justify-center bg-gradient-to-b from-sky-800 to-teal-800 text-white">
-      <div class="md:bg-white/10 backdrop-blur-[5px] p-16">
-        <h3 class="flex items-center justify-center border p-2 mb-7">
-          <span class="fa fa-xl fa-stopwatch"></span> 5 min
-        </h3>
-        <div class="flex text-teal-600">
-          <div class="h-[80px] w-[80px] flex items-center justify-center text-4xl bg-white shadow shadow-black/80 rounded-full mx-5">
-            <span class="fab fa-html5"></span>
+    <div class="md:p-16 game-options">
+      <h2 class="text-xl text-center mb-5">Select Subject</h2>
+      <div class="flex justify-evenly text-teal-600">
+        <div class=" flex items-center justify-center text-4xl bg-white shadow shadow-black/80 rounded-full mx-5 subject">
+          <span class="fab fa-html5" id='html'>
+        </div>
+        <div class=" flex items-center justify-center text-4xl bg-white shadow shadow-black/80 rounded-full mx-5 subject">
+          <span class="fab fa-css3" id="css"> 
+        </div>
+      </div>
+      <div class="bg-white/10 backdrop-blur-[5px] p-6 mt-8">
+        <div class="md:flex">
+          <!-- QUESTION NUMBER -->
+          <div class="md:mr-2">
+            <h3 class="font-thin mb-3">No of Questions</h3>
+            <div class="bg-white text-gray-700 py-2">
+              <select class="md:w-[150px] w-full border-none focus:border-none outline-none question-no">
+                <option value="">Choose</option>
+                <option value="5">5 to 10</option>
+                <option value="20">20 to 30</option>
+                <option value="30">30 to 40</option>
+                <option value="50">50 to 60</option>
+              </select>
+            </div>
           </div>
-          <div class="h-[80px] w-[80px] flex items-center justify-center text-4xl bg-white shadow shadow-black/80 rounded-full mx-5">
-          	<span class="fab fa-css3"></span>
+          <!-- TIMER -->
+          <div class="md:ml-2">
+            <h3 class="font-thin mb-3">Choose Time</h3>
+            <div class="bg-white text-center py-2">
+              <select class="md:w-[150px] w-full text-gray-700 border-none focus:border-none outline-none choose-time">
+                <option value="">Choose</option>
+                <option value="5">5 Minute</option>
+                <option value="10">10 Minute</option>
+                <option value="15">15 Minute</option>
+                <option value="20">20 Minute</option>
+                <option value="25">25 Minute</option>
+              </select>
+            </div>
           </div>
         </div>
+        <!-- PLAYERS CARD -->
         <div class="my-6">
-          <h3 class="font-thin mb-3">Select No of Questions</h3>
-          <div class="bg-white text-center px-2 py-2">
-            <select class="text-gray-700 text-center border-none focus:border-none outline-none">
-              <class value="5 to 10 text-center">5 to 10</option>
-              <option value="5 to 10 text-center">20 to 30</option>
-              <option value="5 to 10 text-center">30 to 40</option>
-              <option value="5 to 10 text-center">50 to 60</option>
-            </select>
-          </div>
-        </div>
-        <!-- Select solo -->
-        <div class="">
           <h3 class="font-thin mb-3">Choose No of Players</h3>
           <div class="flex">
             <div class="text-center">
-              <input type="radio" name="players" class="h-6 w-full" />
+              <input type="radio" name="players" value="1" class="h-6 w-full players" />
+              Solo
+            </div>
+            <div class="text-center">
+              <input type="radio" name="players" value="2" class="h-6 w-full players" />
               Two
             </div>
             <div class="text-center">
-              <input type="radio" name="players" class="h-6 w-full" />
+              <input type="radio" name="players" value="3" class="h-6 w-full players" />
               Three
             </div>
             <div class="text-center">
-              <input type="radio" name="players" class="h-6 w-full" />
+              <input type="radio" name="players" value="4" class="h-6 w-full players" />
               Four
             </div>
           </div>
         </div>
-        <button class="w-full rounded bg-teal-500 py-2 mt-4">
+        <button class="w-full rounded bg-teal-500 py-2 mt-4 start-btn">
           Start Quiz
         </button>
       </div>
     </div>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <div class="started-game"></div>
+  </div>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+   <script src="./js/index.js"></script>
 </body>
 </html>
